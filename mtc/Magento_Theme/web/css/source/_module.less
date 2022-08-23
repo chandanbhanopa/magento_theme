@@ -2,9 +2,7 @@
 //  * Copyright © Magento, Inc. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 @import 'module/_collapsible_navigation.less';
-
 //
 //  Theme variables
 //  _____________________________________________
@@ -118,15 +116,15 @@
 
                 > a {
                     .lib-link(
-                    @_link-color: @header-panel__text-color,
-                    @_link-text-decoration: none,
-                    @_link-color-visited: @header-panel__text-color,
-                    @_link-text-decoration-visited: none,
-                    @_link-color-hover: @header-panel__text-color,
-                    @_link-text-decoration-hover: underline,
-                    @_link-color-active: @header-panel__text-color,
-                    @_link-text-decoration-active: underline
-                    );
+                        @_link-color: @header-panel__text-color,
+                        @_link-text-decoration: none,
+                        @_link-color-visited: @header-panel__text-color,
+                        @_link-text-decoration-visited: none,
+                        @_link-color-hover: @header-panel__text-color,
+                        @_link-text-decoration-hover: underline,
+                        @_link-color-active: @header-panel__text-color,
+                        @_link-text-decoration-active: underline
+                        );
                 }
             }
         }
@@ -266,15 +264,15 @@
 
                 a {
                     .lib-link(
-                    @_link-color: @footer-links-color,
-                    @_link-text-decoration: none,
-                    @_link-color-visited: @footer-links-color,
-                    @_link-text-decoration-visited: none,
-                    @_link-color-hover: @footer-links-color-hover,
-                    @_link-text-decoration-hover: underline,
-                    @_link-color-active: @footer-links-color-hover,
-                    @_link-text-decoration-active: underline
-                    );
+                        @_link-color: @footer-links-color,
+                        @_link-text-decoration: none,
+                        @_link-color-visited: @footer-links-color,
+                        @_link-text-decoration-visited: none,
+                        @_link-color-hover: @footer-links-color-hover,
+                        @_link-text-decoration-hover: underline,
+                        @_link-color-active: @footer-links-color-hover,
+                        @_link-text-decoration-active: underline
+                        );
                 }
             }
         }
@@ -294,28 +292,28 @@
         .switcher {
             .options {
                 .lib-dropdown(
-                @_dropdown-actions-padding: 0,
-                @_dropdown-list-item-padding: 0,
-                @_dropdown-toggle-icon-content: @icon-down,
-                @_dropdown-toggle-active-icon-content: @icon-up,
-                @_icon-font-text-hide: true,
-                @_icon-font-size: 10px,
-                @_icon-font-line-height: 22px,
-                @_dropdown-list-min-width: 160px
-                );
+                    @_dropdown-actions-padding: 0,
+                    @_dropdown-list-item-padding: 0,
+                    @_dropdown-toggle-icon-content: @icon-down,
+                    @_dropdown-toggle-active-icon-content: @icon-up,
+                    @_icon-font-text-hide: true,
+                    @_icon-font-size: 10px,
+                    @_icon-font-line-height: 22px,
+                    @_dropdown-list-min-width: 160px
+                    );
 
                 ul.dropdown {
                     a {
                         .lib-link(
-                        @_link-color: @color-gray20,
-                        @_link-text-decoration: none,
-                        @_link-color-visited: @color-gray20,
-                        @_link-text-decoration-visited: none,
-                        @_link-color-hover: @color-gray20,
-                        @_link-text-decoration-hover: none,
-                        @_link-color-active: @color-gray20,
-                        @_link-text-decoration-active: none
-                        );
+                            @_link-color: @color-gray20,
+                            @_link-text-decoration: none,
+                            @_link-color-visited: @color-gray20,
+                            @_link-text-decoration-visited: none,
+                            @_link-color-hover: @color-gray20,
+                            @_link-text-decoration-hover: none,
+                            @_link-color-active: @color-gray20,
+                            @_link-text-decoration-active: none
+                            );
                         display: block;
                         padding: 8px;
                     }
@@ -333,6 +331,7 @@
     }
     .page-header .panel.wrapper {
         .switcher {
+            display: none;
             .options {
                 ul.dropdown {
                     right: 0;
@@ -397,6 +396,100 @@
     .cookie-status-message {
         display: none;
     }
+
+    //Custom code
+    .switcher{
+        &.currency{
+            &.switcher-currency{
+                display: inline-block;
+            }
+        }
+        .switcher-label{
+            border: 0;
+            clip: rect(0, 0, 0, 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+        .options{
+            display: inline-block;
+            position: relative;    
+            &:before,
+            &:after{
+                content: '';
+                display: table;
+            }
+            &.active{
+                overflow: visible;
+                ul.dropdown{
+                    display:block
+                }
+            }
+            .action.toggle {
+                &:after{
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    font-size: 10px;
+                    line-height: 22px;
+                    color: inherit;
+                    content: '\e622';
+                    font-family: 'luma-icons';
+                    margin: 0;
+                    vertical-align: top;
+                    display: inline-block;
+                    font-weight: normal;
+                    overflow: hidden;
+                    speak: none;
+                    text-align: center;
+                }
+                &.active{
+                    display: inline-block;
+                    text-decoration: none;
+                }
+                padding: 0;
+                cursor: pointer;
+                display: inline-block;
+                text-decoration: none;
+            }
+            ul.dropdown {
+                right: 0;
+                margin: 0;
+                padding: 0;
+                list-style: none none;
+                background: #fff;
+                border: 1px solid #bbb;
+                margin-top: 4px;
+                min-width: 160px;
+                z-index: 100;
+                box-sizing: border-box;
+                display: none;
+                position: absolute;
+                top: 100%;
+                &:before{
+                    left: auto;
+                    right: 10px;
+                }
+                &:after{
+                    content: '';
+                    display: table;
+                }
+                a{
+                    color: #333;
+                    text-decoration: none;
+                    display: block;
+                    padding: 8px;
+                }
+                li{
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
+    // custom cod end
 }
 
 //
@@ -542,32 +635,32 @@
 
     .customer-welcome {
         .lib-dropdown(
-        @_toggle-selector: ~'.action.switch',
-        @_options-selector: ~'ul',
-        @_dropdown-actions-padding: 0,
-        @_dropdown-list-item-padding: 0,
-        @_dropdown-toggle-icon-content: @icon-down,
-        @_dropdown-toggle-active-icon-content: @icon-up,
-        @_icon-font-text-hide: true,
-        @_icon-font-size: 10px,
-        @_icon-font-line-height: 22px,
-        @_dropdown-list-pointer-position: right,
-        @_dropdown-list-position-right: 0,
-        @_dropdown-list-z-index: @customer-welcome__z-index
-        );
+            @_toggle-selector: ~'.action.switch',
+            @_options-selector: ~'ul',
+            @_dropdown-actions-padding: 0,
+            @_dropdown-list-item-padding: 0,
+            @_dropdown-toggle-icon-content: @icon-down,
+            @_dropdown-toggle-active-icon-content: @icon-up,
+            @_icon-font-text-hide: true,
+            @_icon-font-size: 10px,
+            @_icon-font-line-height: 22px,
+            @_dropdown-list-pointer-position: right,
+            @_dropdown-list-position-right: 0,
+            @_dropdown-list-z-index: @customer-welcome__z-index
+            );
 
         li:extend(.switcher li all) {
             a {
                 .lib-link(
-                @_link-color: @color-gray20,
-                @_link-text-decoration: none,
-                @_link-color-visited: @color-gray20,
-                @_link-text-decoration-visited: none,
-                @_link-color-hover: @color-gray20,
-                @_link-text-decoration-hover: none,
-                @_link-color-active: @color-gray20,
-                @_link-text-decoration-active: none
-                );
+                    @_link-color: @color-gray20,
+                    @_link-text-decoration: none,
+                    @_link-color-visited: @color-gray20,
+                    @_link-text-decoration-visited: none,
+                    @_link-color-hover: @color-gray20,
+                    @_link-text-decoration-hover: none,
+                    @_link-color-active: @color-gray20,
+                    @_link-text-decoration-active: none
+                    );
                 display: block;
                 line-height: 1.4;
                 padding: 8px;
@@ -595,9 +688,9 @@
         &.active {
             .action.switch {
                 .lib-icon-font-symbol(
-                @_icon-font-content: @icon-up,
-                @_icon-font-position: after
-                );
+                    @_icon-font-content: @icon-up,
+                    @_icon-font-position: after
+                    );
             }
 
             .customer-menu {
