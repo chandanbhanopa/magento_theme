@@ -7,17 +7,23 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="header.panel">
-            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
-                <arguments>
-                    <argument name="css_class" xsi:type="string">header links</argument>
-                </arguments>
-            </block>
-        </referenceContainer>
-        <referenceContainer name="footer">
-            <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="footer_links" template="Magento_Store::switch/stores.phtml"/>
-        </referenceContainer>
-        <referenceBlock name="report.bugs" remove="true"/>
-        <move element="copyright" destination="before.body.end"/>
-    </body>
+        <referenceBlock name="header.links">
+           <block class="Magento\Framework\View\Element\Html\Links" name="add-new-header-link" template="Magento_Theme::html/top-header-link.phtml">
+           </block>
+       </referenceBlock>
+
+       <referenceBlock name="authorization-link" template="Magento_Theme::html/login.phtml" />
+       <referenceContainer name="footer">
+        <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="footer_links" template="Magento_Store::switch/stores.phtml"/>
+    </referenceContainer>
+    <referenceBlock name="report.bugs" remove="true"/>
+    <move element="copyright" destination="before.body.end"/>
+    <move element="store_language" destination= "header-wrapper"  before="minicart"/>
+    <move element="authorization-link" destination= "header-wrapper"  before="store_language"/>
+    <move element="top.search" destination= "header-wrapper" after="logo" />
+    <!-- <referenceBlock name="authorization-link" remove="true" /> -->
+    <referenceBlock name="register-link" remove="true" />
+    <referenceBlock name="header" remove="true" />
+
+</body>
 </page>
