@@ -1,1 +1,2 @@
 Magento theme
+1. Fix currency dropdown issue on header.
