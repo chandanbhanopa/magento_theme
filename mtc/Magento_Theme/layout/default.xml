@@ -8,22 +8,41 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="header.links">
-           <block class="Magento\Framework\View\Element\Html\Links" name="add-new-header-link" template="Magento_Theme::html/top-header-link.phtml">
-           </block>
-       </referenceBlock>
+            <block class="Magento\Framework\View\Element\Html\Links" name="add-new-header-link" template="Magento_Theme::html/top-header-link.phtml">
+            </block>
+        </referenceBlock>
 
-       <referenceBlock name="authorization-link" template="Magento_Theme::html/login.phtml" />
-       <referenceContainer name="footer">
-        <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="footer_links" template="Magento_Store::switch/stores.phtml"/>
-    </referenceContainer>
-    <referenceBlock name="report.bugs" remove="true"/>
-    <move element="copyright" destination="before.body.end"/>
-    <move element="store_language" destination= "header-wrapper"  before="minicart"/>
-    <move element="authorization-link" destination= "header-wrapper"  before="store_language"/>
-    <move element="top.search" destination= "header-wrapper" after="logo" />
-    <!-- <referenceBlock name="authorization-link" remove="true" /> -->
-    <referenceBlock name="register-link" remove="true" />
-    <referenceBlock name="header" remove="true" />
+        <!-- <referenceBlock name="authorization-link" template="Magento_Theme::html/login.phtml" before="minicart" /> -->
+
+        <referenceBlock name="catalog.topnav" template="Magento_Theme::html/topmenu.phtml" />
+        
+
+        <referenceContainer name="sidebar.additional">
+            <block name="all.category" template="Magento_Theme::html/all-categories.phtml" />
+        </referenceContainer>
+
+        <referenceContainer name="footer" >
+            <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="footer_links" template="Magento_Store::switch/stores.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="footer-container">
+            <block name="hot.footer" template="Magento_Theme::html/footer.phtml" />
+        </referenceContainer>
+
+        <move element="copyright" destination="before.body.end"/>
+        <move element="store.settings.currency" destination= "header-wrapper"  before="-"/>
+        <!-- <move element="authorization-link" destination= "header-wrapper"  after="store.settings.currency"/> -->
+        <move element="top.search" destination= "header-wrapper" after="logo" />
+        <move element="form.subscribe" destination="page.bottom" before="-" />
+        
+        <!-- <referenceBlock name="authorization-link" remove="true" /> -->
+
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="register-link" remove="true" />
+        <referenceBlock name="header" remove="true" />
+        <referenceBlock name="store_language" remove="true" />
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
+        <referenceBlock name="wishlist_sidebar" remove="true" />
 
 </body>
 </page>

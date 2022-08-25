@@ -1,2 +1,6 @@
 Magento theme
-1. Fix currency dropdown issue on header.
+
+Currency Setup:
+1. Set Two currency, GBP and USD
+2. Update exchage rate from admin setting.
+3. Fix currency dropdown issue on header.
