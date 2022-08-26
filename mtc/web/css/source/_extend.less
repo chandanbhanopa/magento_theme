@@ -1,0 +1,235 @@
+/* 
+footer css */
+
+.bottom-footer {
+    font-weight: 600;
+}
+
+.mt-3 {
+    margin-top: 3rem !important;
+}
+
+/* Delete */
+.display-desktop {
+    display: flex !important;
+}
+
+.display-mobile {
+    display: none !important;
+}
+
+/* #end */
+.actions {
+    display: inline-block;
+}
+
+.copyright {
+    display: none;
+}
+
+/*new magento sidebar  */
+.sidebar.sidebar-additional {
+    margin-bottom: 55px;
+
+    .hot-all-categories {
+        h3 {
+            font-size: 18px;
+        }
+
+        .category-list {
+            .category-title {
+                display: block;
+
+                a {
+                    color: black;
+                    font-size: 16px;
+                    font-weight: 400px;
+                    line-height: 24px;
+
+                    &:active {
+                        color: #a70b09;
+                    }
+
+                    &:hover {
+                        color: #a70b09;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// footer mobile
+@media only screen and (min-width: 280px) and (max-width: 575px) {
+
+    /* del */
+    .display-desktop {
+        display: flex !important;
+    }
+
+    .display-mobile {
+        display: none !important;
+    }
+
+    /* end */
+    .d-flex {
+        display: flex;
+    }
+
+    .list {
+        list-style-type: none;
+    }
+
+    .mt-3 {
+        margin-top: 3rem !important;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .page-wrapper {
+        >.page-bottom {
+            padding: 0;
+        }
+    }
+
+    .bottom-footer {
+        background-color: #f2f2f2;
+        padding-top: 57px;
+
+        .inner-container {
+            &:nth-child(2) {
+                width: 50%;
+            }
+
+            &:nth-child(3) {
+                width: 50%;
+            }
+
+            &:nth-child(4) {
+                width: 50%;
+            }
+
+            .logo-section {
+                display: flex;
+
+                li {
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+    .page-footer {
+        .bottom-footer {
+            .inner-container {
+                width: 100%;
+            }
+        }
+
+        .logo-footer {
+            margin: 0 auto;
+            display: block;
+        }
+
+        .footer-Listing {
+            ul {
+                li {
+                    a {
+                        color: #8648d0;
+                    }
+                }
+            }
+        }
+
+        .copyright-section {
+            .copyright-year {
+                color: #404664;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .payment-option {
+        display: grid;
+        grid-template-columns: 40% repeat(4, 12.5%);
+        background-color: #fff;
+        padding: 1rem 0;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .footer-Listing-icon {
+        .list {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+    }
+
+    .copyright-text {
+        text-align: center;
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 400;
+    }
+
+    .mx-3 {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .footer-Listing {
+        ul {
+            li {
+                a {
+                    text-decoration: none !important;
+                    color: #8648d0;
+                }
+            }
+        }
+    }
+
+/* header mobile */
+    .body {
+        background-color: #fff !important;
+    }
+
+    .page-header {
+        border: none !important;
+        background-color: #fff;
+    }
+
+    .header.content {
+        display: flex;
+
+        .nav-toggle {
+            order: 4;
+            position: static;
+        }
+
+        .logo {
+            order: 1;
+            margin-right: auto;
+        }
+
+        .custom-login-link {
+            order: 2;
+        }
+
+        .amsearch-wrapper-block {
+            order: 5;
+        }
+
+        .minicart-wrapper {
+            order: 3;
+
+            &::before {
+                font-size: 25px;
+                margin-top: -5px;
+                padding-right: 5px;
+            }
+        }
+    }
+}
