@@ -1,6 +1,12 @@
-<li><a href="">How To Measure</a></li>
-<li><a href="">Delivery Info</a></li>
-<li><a href="">Customer Service</a></li>
-<li><a href="">Testimonials</a></li>
-<li><a href="">About Us</a></li>
-<li><a href="tel:441764656671">+44 1764 656671</a></li>
+<?php
+/**
+@var $escaper Escaper
+*/
+use Magento\Framework\Escaper;
+?>
+<li><a href=""><?= $escaper->escapeHtml(__('How To Measure')) ?></a></li>
+<li><a href=""><?= $escaper->escapeHtml(__('Delivery Info')) ?></a></li>
+<li><a href=""><?= $escaper->escapeHtml(__('Customer Service')) ?></a></li>
+<li><a href=""><?= $escaper->escapeHtml(__('Testimonials')) ?></a></li>
+<li><a href=""><?= $escaper->escapeHtml(__('About Us')) ?></a></li>
+<li><a href="tel:441764656671"><?= $escaper->escapeHtml(__('+44 1764 656671')) ?></a></li>

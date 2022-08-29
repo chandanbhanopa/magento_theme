@@ -18,7 +18,8 @@
 
         <referenceContainer name="header-wrapper">
             <container name="custom-login-section" htmlClass="custom-login-link" htmlTag="ul" before="minicart">
-                <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link-login" template="Magento_Customer::account/link/authorization.phtml" htmlTag="ul" htmlClass="custom-login-link">
+                <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link-login" 
+                    template="Magento_Customer::account/link/authorization.phtml">
                     <arguments>
                         <argument name="sortOrder" xsi:type="number">10</argument>
                     </arguments>

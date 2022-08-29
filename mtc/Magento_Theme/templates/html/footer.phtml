@@ -1,11 +1,16 @@
-<!-- Admin Managible Footer-->
-<?php /*$this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('house_of_tartan_footer')->toHtml(); */?>
+<?php
+/**
+@var $escaper Escaper
+*/
+use Magento\Framework\Escaper;
+?>
 
-<div class="main-container display-desktop">
+
+<div class="main-container">
 	<div class="container">
 		<div class="bottom-footer">
 			<div class="inner-container">
-				<img src="<?=$this->getViewFileUrl('images/logo.svg'); ?>" alt="house of tartan" />
+				<img src="<?=$this->getViewFileUrl('images/logo_footer.svg'); ?>" alt="house of tartan" />
 				<div class="social-Listing">
 					<ul>
 						<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
@@ -18,46 +23,46 @@
 			<div class="inner-container">
 				<div class="footer-Listing">
 					<ul>
-						<li><a href="">Tartan Finder</a></li>
-						<li><a href="">Clan Finder</a></li>
-						<li><a href="">Design Your Own Tartan</a></li>
-						<li><a href="">Clan Shops & Affiliates</a></li>
-						<li><a href="">How To Measure</a></li>
-						<li><a href="">Gift Vouchers</a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Tartan Finder')) ?></a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Clan Finder')) ?></a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Design Your Own Tartan')) ?></a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Clan Shops & Affiliates')) ?></a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('How To Measure')) ?></a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Gift Vouchers')) ?></a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="inner-container">
 				<div class="footer-Listing">
 					<ul>
-						<li><a href="">Tartan Design & Registration Service</a></li>
-						<li><a href="">Delivery & Shipping Info</a></li>
-						<li><a href="">Gallery & Testimonials</a></li>
-						<li><a href="">About Us</a></li>
-						<li><a href="">Tartan Events</a></li>
-						<li><a href="">Our Blog</a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Tartan Design & Registration Service')) ?></a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Delivery & Shipping Info')) ?></a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Gallery & Testimonials')) ?></a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('About Us')) ?></a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Tartan Events')) ?></a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Our Blog')) ?></a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="inner-container">
 				<div class="footer-Listing">
 					<ul>
-						<li><a href="">Contact Us</a></li>
-						<li><a href="">Customer Service</a></li>
-						<li><a href="">Privacy Policy</a></li>
-						<li><a href="">Terms & Conditions</a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Contact Us')) ?></a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Customer Service')) ?></a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Privacy Policy')) ?></a></li>
+						<li><a href=""><?= $escaper->escapeHtml(__('Terms & Conditions')) ?></a></li>
 					</ul>
 				</div>
 			</div>
 
 			<div class="inner-container">
 				<div class="footer-Listing">
-					<p class="address-footer">House of Tartan Ltd<br>
-						9 - 11 East High Street<br>
-						CRIEFF, Perthshire,<br>
-					Scotland, PH7 3AF</p>
+					<p class="address-footer"><?= $escaper->escapeHtml(__('House of Tartan Ltd')) ?><br>
+						<?= $escaper->escapeHtml(__('9 - 11 East High Street')); ?><br>
+						<?= $escaper->escapeHtml(__('CRIEFF, Perthshire,')); ?><br>
+					<?= $escaper->escapeHtml(__('Scotland, PH7 3AF')); ?></p>
 
-					<p class="phone-number">Tel +44 1764 656671</p>
+					<p class="phone-number"><?= $escaper->escapeHtml(__('Tel +44 1764 656671')); ?></p>
 				</div>
 			</div>
 
@@ -76,7 +81,7 @@
 		</div>
 	</div>
 	<div class="payment-option">
-		Supported Payment Methods 
+		<?= $escaper->escapeHtml(__('Supported Payment Methods')); ?> 
 		<img src="<?=$this->getViewFileUrl('images/Visa.png'); ?>" alt="visa" />
 		<img src="<?=$this->getViewFileUrl('images/american_express.jpg'); ?>" alt="american express" />
 		<img src="<?=$this->getViewFileUrl('images/master_card.png'); ?>" alt="master card" />
@@ -84,11 +89,12 @@
 	</div>
 	<div class="copyright-section">
 		<div class="copyright-year">
-			© 2020 House of Tartan, Crieff
+			<?= $escaper->escapeHtml(__('© 2020 House of Tartan, Crieff')); ?> 
 		</div>
 		<div class="copyright-text">
-			HOUSE OF TARTAN®, MacBeanie®, and the HoT PIPERMARK® are registered trademarks of House of Tartan Ltd, Scotland
-			website by mtc.
+			<?= $escaper->escapeHtml(__('HOUSE OF TARTAN®, MacBeanie®, and the HoT PIPERMARK® are registered trademarks of House of Tartan Ltd, Scotland
+			website by mtc.')); ?>
+			
 		</div>
 	</div>
 </div>

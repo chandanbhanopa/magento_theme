@@ -1,3 +1,163 @@
+
+// Common
+// 
+// 
+.svgMask(@color: @text_color, @filename, @width: 1em, @height: 1em) {
+    content: '';
+    display: inline-block;
+    width: @width;
+    height: @height;
+    background-color: @color;
+    -webkit-mask-image: url('../images/icons/@{filename}');
+    mask-image: url('../images/icons/@{filename}');
+}
+// 
+& when (@media-common =true) {
+
+}
+
+//Desktop
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    //Custom code
+    .page-header{
+        .switcher{
+            &.currency{
+                &.switcher-currency{
+                    display: inline-block;
+                }
+            }
+            .switcher-label{
+                border: 0;
+                clip: rect(0, 0, 0, 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+            .options{
+                display: inline-block;
+                position: relative;    
+                &:before,
+                &:after{
+                    content: '';
+                    display: table;
+                }
+                &.active{
+                    overflow: visible;
+                    ul.dropdown{
+                        display:block
+                    }
+                }
+                .action.toggle {
+                    &:after{
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        font-size: 10px;
+                        line-height: 22px;
+                        color: inherit;
+                        content: '\e622';
+                        font-family: 'luma-icons';
+                        margin: 0;
+                        vertical-align: top;
+                        display: inline-block;
+                        font-weight: normal;
+                        overflow: hidden;
+                        speak: none;
+                        text-align: center;
+                    }
+                    &.active{
+                        display: inline-block;
+                        text-decoration: none;
+                    }
+                    padding: 0;
+                    cursor: pointer;
+                    display: inline-block;
+                    text-decoration: none;
+                }
+                ul.dropdown {
+                    right: 0;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none none;
+                    background: #fff;
+                    border: 1px solid #bbb;
+                    margin-top: 4px;
+                    min-width: 160px;
+                    z-index: 100;
+                    box-sizing: border-box;
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    &:before{
+                        left: auto;
+                        right: 10px;
+                    }
+                    &:after{
+                        content: '';
+                        display: table;
+                    }
+                    a{
+                        color: #333;
+                        text-decoration: none;
+                        display: block;
+                        padding: 8px;
+                    }
+                    li{
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    // custom cod end
+
+    .page-header .amsearch-wrapper-block {
+        & {
+            float: right;
+            margin: 0;
+            padding: 0;
+            width: 786px;
+        }
+
+        &:before {
+            content: none;
+        }
+    }
+
+    ul{
+        &.custom-login-link{
+            list-style-type: none;
+            margin-bottom: unset;
+            margin-top:unset;
+            li{
+                margin-bottom: unset;
+                margin-top:unset;
+            }
+        }
+    }
+    .header{
+        &.content{
+            .logo{
+                margin: 0 auto 5px 0;
+            }
+        }
+    }
+    
+}
+
+//Mobile
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    
+}
+
+
 /* 
 footer css */
 
@@ -191,7 +351,7 @@ footer css */
         }
     }
 
-/* header mobile */
+    /* header mobile */
     .body {
         background-color: #fff !important;
     }
